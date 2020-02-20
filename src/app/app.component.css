@@ -1,0 +1,24 @@
+.toolbar {
+  color: black;
+  font-size: 2rem;
+  margin: 10px;
+  width: 98%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.search {
+  font-size: 0.9rem;
+  margin-top: 18px;
+  text-align: center;
+}
+
+.control {
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+  padding: 10px;
+  width: 100px;
+  height: 0px;
+}

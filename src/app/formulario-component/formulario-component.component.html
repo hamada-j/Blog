@@ -1,0 +1,80 @@
+<div class="formulario">
+  <form [formGroup]="post" (ngSubmit)="onSubmit()">
+    <p>
+      <mat-form-field class="mat-form-field" color="accent" appearance="legacy">
+        <mat-label class="mat-label">Titulo del Post</mat-label>
+        <input
+          autocomplete="off"
+          matInput
+          placeholder="Escribe!"
+          formControlName="titulo"
+        />
+        <mat-icon matSuffix>picture_in_picture</mat-icon>
+        <mat-hint></mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field color="accent" appearance="standard">
+        <mat-label class="mat-label">Autor</mat-label>
+        <input
+          autocomplete="off"
+          matInput
+          placeholder="Escribe!"
+          formControlName="autor"
+        />
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-hint class="mat-hint">dinos quien eres!</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field color="accent" appearance="standard">
+        <mat-label class="mat-label">Imagen</mat-label>
+        <input
+          autocomplete="off"
+          matInput
+          placeholder="Url!"
+          formControlName="imagen"
+        />
+        <mat-icon matSuffix>add_a_photo</mat-icon>
+        <mat-hint> esta chula la foto ;)</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field color="accent" appearance="fill">
+        <mat-label class="mat-label">categoria</mat-label>
+        <input
+          autocomplete="off"
+          matInput
+          placeholder="Escribe la Categoria del post!"
+          formControlName="categoria"
+        />
+        <mat-icon matSuffix>category</mat-icon>
+        <mat-hint></mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field color="accent" appearance="outline">
+        <mat-label class="mat-label">Texto</mat-label>
+        <input
+          autocomplete="off"
+          matInput
+          placeholder="Escribe!"
+          formControlName="texto"
+        />
+        <mat-icon matSuffix>textsms</mat-icon>
+        <mat-hint>texto!</mat-hint>
+      </mat-form-field>
+    </p>
+
+    <button
+      mat-raised-button
+      color="accent"
+      matBadge="8"
+      matBadgePosition="before"
+      matBadgeColor="accent"
+      type="submit"
+    >
+      Enviar
+    </button>
+  </form>
+</div>

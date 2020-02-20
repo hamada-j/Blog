@@ -1,0 +1,38 @@
+<div class="post" *ngFor="let post of arrPost">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image">
+        <img mat-card-image [src]="post.imagen" alt="Photo" />
+      </div>
+      <div class="posicion">
+        <mat-card-title>{{ post.autor }}</mat-card-title>
+        <mat-card-subtitle>{{ post.titulo }}</mat-card-subtitle>
+      </div>
+      <div class="example-button-row">
+        <button
+          mat-icon-button
+          color="accent"
+          aria-label="Example icon-button with a heart icon"
+        >
+          <mat-icon>favorite</mat-icon>
+        </button>
+      </div>
+    </mat-card-header>
+    <img mat-card-image [src]="post.imagen" alt="Photo" />
+    <mat-card-content>
+      <h4>{{ post.categoria }}</h4>
+      <p>
+        {{ post.texto }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <p>{{ post.fecha }}</p>
+      <button mat-raised-button (click)="handelClick($event)" color="accent">
+        Nuevo Post
+      </button>
+      <button mat-raised-button color="warn" (click)="handelDelete(post.id)">
+        Borrar
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

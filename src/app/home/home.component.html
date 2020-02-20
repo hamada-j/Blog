@@ -1,0 +1,76 @@
+<div class="search">
+  <mat-form-field hintLabel="" appearance="fill">
+    <mat-label>Search</mat-label>
+    <input
+      autocomplete="off"
+      matInput
+      #input
+      maxlength="10"
+      placeholder="escriba categoria!"
+      (change)="handelSearch($event)"
+    />
+    <mat-hint></mat-hint>
+  </mat-form-field>
+</div>
+
+<button
+  (click)="toggle()"
+  mat-fab
+  aria-label="Example icon-button with a heart icon"
+>
+  <mat-icon class="icon" *ngIf="isOpen == true; else elseBlock"
+    >femoji_nature</mat-icon
+  >
+  <ng-template #elseBlock><mat-icon>cloud</mat-icon></ng-template>
+</button>
+<div [@toggleBox]="isOpen ? 'open' : 'closed'" class="custom-style">
+  <p>Estado del blog: {{ isOpen ? "Abierto" : "Cerrado" }}</p>
+  <div class="custom" *ngIf="isOpen == true">Fecha: {{ fechaActual }}</div>
+  <div class="custom" *ngIf="isOpen == true">
+    Tiempo: {{ this.getTime("hora") }}
+  </div>
+  <div class="custom" *ngIf="isOpen == true">
+    Autores Registrados: {{ numeroPost }}
+  </div>
+  <div class="custom" *ngIf="isOpen == true">Autores Conectados: 1</div>
+  <div class="custom" *ngIf="isOpen == true">Top Autores: 1</div>
+  <div class="custom" *ngIf="isOpen == true">
+    Cantidad Posts: {{ numeroPost }}
+  </div>
+  <div class="custom" *ngIf="isOpen == true">New Posts: 0</div>
+  <div class="custom" *ngIf="isOpen == true">Discution: 0</div>
+</div>
+
+<div *ngFor="let post of arrBusqueda">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image">
+        <img mat-card-image [src]="post.imagen" alt="Photo" />
+      </div>
+      <div class="posicion">
+        <mat-card-title>{{ post.autor }}</mat-card-title>
+        <mat-card-subtitle>{{ post.titulo }}</mat-card-subtitle>
+      </div>
+      <div class="example-button-row">
+        <button
+          mat-icon-button
+          color="accent"
+          aria-label="Example icon-button with a heart icon"
+        >
+          <mat-icon>favorite</mat-icon>
+        </button>
+      </div>
+    </mat-card-header>
+    <img mat-card-image [src]="post.imagen" alt="Photo" />
+    <mat-card-content>
+      <h4>{{ post.categoria }}</h4>
+      <p>
+        {{ post.texto }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <p>{{ post.fecha }}</p>
+      <button mat-raised-button color="warn">Borrar</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

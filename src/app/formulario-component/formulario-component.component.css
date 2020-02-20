@@ -1,0 +1,41 @@
+.example-button-row {
+  margin-left: 130%;
+  padding: 10px;
+}
+.formulario {
+  background-color: rgba(236, 227, 142, 0.2);
+  border: 2px solid black;
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  padding: 5px;
+  font-size: 1.3rem;
+  color: yellow;
+  width: 500px;
+}
+p {
+  width: 100%;
+}
+form {
+  width: 500px;
+  color: yellow;
+  text-align: center;
+}
+.mat-label {
+  color: yellow;
+}
+.mat-hint {
+  color: yellow;
+  font-size: 0.7rem;
+}
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}
+.ng-dirty {
+  color: rgb(248, 248, 78);
+}
+
+.mat-form-field {
+  width: 80%;
+}

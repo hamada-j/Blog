@@ -1,0 +1,10 @@
+.all {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1400px;
+}
+.post {
+  width: 300px;
+  height: 700px;
+  margin: 2px 2px;
+}
