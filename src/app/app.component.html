@@ -1,20 +1,48 @@
-<mat-toolbar class="toolbar" color="accent">
-  <div>Blog <mat-icon matSuffix>emoji_nature</mat-icon></div>
-  <div class="example-button-row">
-    <a mat-fab (click)="handelClickAPI($event)">API</a>
-  </div>
-  <div class="example-button-row">
-    <a mat-fab (click)="handelClickAll($event)">All</a>
-  </div>
-  <div>
-    <a mat-fab (click)="handelClick($event)">New</a>
-  </div>
-  <div>
-    <button mat-fab color="warn" (click)="handelClickHome($event)">
-      <mat-icon matSuffix>home_work</mat-icon>
-    </button>
-  </div>
-</mat-toolbar>
-<div class="control">
+<div
+  class="nav
+"
+>
+  <mat-icon
+    _ngcontent-usf-c60=""
+    role="img"
+    class="mat-icon notranslate material-icons mat-icon-no-color"
+    aria-hidden="true"
+  ></mat-icon>
+  <mat-toolbar class="toolbar" color="basic">
+    <div>
+      <mat-icon matSuffix>category</mat-icon> Blog
+      <mat-icon matSuffix>account_tree</mat-icon>
+    </div>
+    <div class="example-button-row">
+      <a color="basic" mat-fab (click)="handelClickAPI($event)"
+        ><mat-icon matSuffix>move_to_inbox</mat-icon></a
+      >
+    </div>
+    <div class="example-button-row">
+      <a color="link" mat-fab (click)="handelClickAll($event)"
+        ><mat-icon matSuffix>ballot</mat-icon></a
+      >
+    </div>
+    <div>
+      <a color="basic" mat-fab (click)="handelClick($event)"
+        ><mat-icon matSuffix>fiber_new</mat-icon></a
+      >
+    </div>
+    <div>
+      <button mat-fab color="basic" (click)="handelClickHome($event)">
+        <mat-icon color="basic" matSuffix>graphic_eq</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+
+  <mat-icon
+    _ngcontent-usf-c60=""
+    role="img"
+    class="mat-icon notranslate material-icons mat-icon-no-color"
+    aria-hidden="true"
+  ></mat-icon>
+</div>
+
+<div class="control  ">
   <router-outlet></router-outlet>
 </div>

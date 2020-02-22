@@ -3,29 +3,35 @@
   padding: 10px;
 }
 .formulario {
-  background-color: rgba(236, 227, 142, 0.2);
+  background-color: #555;
   border: 2px solid black;
   display: flex;
   text-align: center;
   flex-wrap: wrap;
-  padding: 5px;
-  font-size: 1.3rem;
-  color: yellow;
-  width: 500px;
+  padding: 30px;
+  font-size: 1rem;
+  color: black;
+  width: 1200px;
+  margin-bottom: 17px;
+}
+.vista {
+  width: 600px;
+  border: 2px black solid;
 }
 p {
   width: 100%;
+  margin-bottom: 100px;
 }
 form {
   width: 500px;
-  color: yellow;
+  color: white;
   text-align: center;
 }
 .mat-label {
-  color: yellow;
+  color: black;
 }
 .mat-hint {
-  color: yellow;
+  color: black;
   font-size: 0.7rem;
 }
 .example-button-row button,

@@ -1,76 +1,89 @@
-<div class="search">
-  <mat-form-field hintLabel="" appearance="fill">
-    <mat-label>Search</mat-label>
-    <input
-      autocomplete="off"
-      matInput
-      #input
-      maxlength="10"
-      placeholder="escriba categoria!"
-      (change)="handelSearch($event)"
-    />
-    <mat-hint></mat-hint>
-  </mat-form-field>
-</div>
+<div class="home">
+  <button color="basic" (click)="toggle()" mat-fab>
+    <mat-icon class="icon" *ngIf="isOpen == true; else elseBlock"
+      >category</mat-icon
+    >
+    <ng-template #elseBlock><mat-icon>cloud</mat-icon></ng-template>
+  </button>
+  <div [@toggleBox]="isOpen ? 'open' : 'closed'" class="custom-style">
+    <h3>{{ isOpen ? "Open" : "" }}</h3>
 
-<button
-  (click)="toggle()"
-  mat-fab
-  aria-label="Example icon-button with a heart icon"
->
-  <mat-icon class="icon" *ngIf="isOpen == true; else elseBlock"
-    >femoji_nature</mat-icon
-  >
-  <ng-template #elseBlock><mat-icon>cloud</mat-icon></ng-template>
-</button>
-<div [@toggleBox]="isOpen ? 'open' : 'closed'" class="custom-style">
-  <p>Estado del blog: {{ isOpen ? "Abierto" : "Cerrado" }}</p>
-  <div class="custom" *ngIf="isOpen == true">Fecha: {{ fechaActual }}</div>
-  <div class="custom" *ngIf="isOpen == true">
-    Tiempo: {{ this.getTime("hora") }}
+    <div class="custom" *ngIf="isOpen == true">
+      <h4>Date</h4>
+      {{ fechaActual | date: "dd-mm-yy" }}
+    </div>
+    <div class="custom" *ngIf="isOpen == true">
+      <h4>Time</h4>
+      {{ fechaActual | date: "HH:mm:ss" }}
+    </div>
+    <div class="custom" *ngIf="isOpen == true">
+      <h4>Autors and Post in LS</h4>
+      {{ arrLS.length }}
+    </div>
+    <div class="custom" *ngIf="isOpen == true">
+      <h4>Autors and Post from API</h4>
+      {{ arrAPI.length }}
+    </div>
+    <div class="custom" *ngIf="isOpen == true">
+      <h4>Autors and Post in Array:</h4>
+      {{ numeroPost }}
+    </div>
+    <div class="custom" *ngIf="isOpen == true" class="container">
+      <h4>Graph</h4>
+      <hr />
+      <div class="row">
+        <div class="col-md-6">
+          <h5>Graph of Posts</h5>
+          <hr />
+          <div id="myfirstchart"></div>
+        </div>
+      </div>
+    </div>
+    <canvas id="ctx"></canvas>
   </div>
-  <div class="custom" *ngIf="isOpen == true">
-    Autores Registrados: {{ numeroPost }}
-  </div>
-  <div class="custom" *ngIf="isOpen == true">Autores Conectados: 1</div>
-  <div class="custom" *ngIf="isOpen == true">Top Autores: 1</div>
-  <div class="custom" *ngIf="isOpen == true">
-    Cantidad Posts: {{ numeroPost }}
-  </div>
-  <div class="custom" *ngIf="isOpen == true">New Posts: 0</div>
-  <div class="custom" *ngIf="isOpen == true">Discution: 0</div>
-</div>
 
-<div *ngFor="let post of arrBusqueda">
-  <mat-card class="example-card">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image">
+  <div color="basic" class="search">
+    <mat-form-field hintLabel="" appearance="fill">
+      <mat-label>Search</mat-label>
+      <input
+        autocomplete="off"
+        matInput
+        #input
+        maxlength="10"
+        placeholder="category: tech ..."
+        (change)="handelSearch($event)"
+      />
+      <mat-hint></mat-hint>
+    </mat-form-field>
+
+    <div *ngFor="let post of arrBusqueda">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div class="posicion">
+            <mat-card-title>{{ post.autor }}</mat-card-title>
+            <mat-card-subtitle>{{ post.titulo }}</mat-card-subtitle>
+          </div>
+          <div class="example-button-row">
+            <button
+              mat-icon-button
+              color="accent"
+              aria-label="Example icon-button with a heart icon"
+            >
+              <mat-icon>favorite</mat-icon>
+            </button>
+          </div>
+        </mat-card-header>
         <img mat-card-image [src]="post.imagen" alt="Photo" />
-      </div>
-      <div class="posicion">
-        <mat-card-title>{{ post.autor }}</mat-card-title>
-        <mat-card-subtitle>{{ post.titulo }}</mat-card-subtitle>
-      </div>
-      <div class="example-button-row">
-        <button
-          mat-icon-button
-          color="accent"
-          aria-label="Example icon-button with a heart icon"
-        >
-          <mat-icon>favorite</mat-icon>
-        </button>
-      </div>
-    </mat-card-header>
-    <img mat-card-image [src]="post.imagen" alt="Photo" />
-    <mat-card-content>
-      <h4>{{ post.categoria }}</h4>
-      <p>
-        {{ post.texto }}
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <p>{{ post.fecha }}</p>
-      <button mat-raised-button color="warn">Borrar</button>
-    </mat-card-actions>
-  </mat-card>
+        <mat-card-content>
+          <h4>{{ post.categoria }}</h4>
+          <p>
+            {{ post.texto }}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <p>{{ post.fecha }}</p>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
 </div>

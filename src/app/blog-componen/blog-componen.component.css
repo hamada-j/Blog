@@ -17,3 +17,12 @@ button {
 .example-button-row {
   margin-left: 500px;
 }
+.categoria {
+  background-color: #ffff;
+
+  text-align: center;
+}
+.cat {
+  text-align: center;
+  width: 100%;
+}

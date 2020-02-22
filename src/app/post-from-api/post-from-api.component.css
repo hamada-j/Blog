@@ -8,3 +8,8 @@
   height: 700px;
   margin: 2px 2px;
 }
+.foto {
+  display: block;
+  width: 100%;
+  height: 50%;
+}

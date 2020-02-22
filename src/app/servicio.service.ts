@@ -17,10 +17,10 @@ export class ServicioService {
 
     this.arrPosts = [
       new Post(
-        "Titulo1",
+        "Titulo",
         "Autor",
         "https://image.shutterstock.com/image-photo/micro-peacock-feather-hd-imagebest-260nw-1127238584.jpg",
-        "categoria",
+        "tech",
         "12:30, 6/15/2020",
         `texto...`
       ),
@@ -28,7 +28,7 @@ export class ServicioService {
         "Titulo2",
         "Autor",
         "https://t3.ftcdn.net/jpg/01/84/56/74/240_F_184567447_ssCwWDn2ZJ6WwjLhS1TZZB4mBBuSEUBw.jpg",
-        "Categoria 2",
+        "hw",
         "12:30, 6/15/2020",
         "texto..."
       ),
@@ -36,7 +36,7 @@ export class ServicioService {
         "Titulo3",
         "Autor",
         "https://static.dezeen.com/uploads/2020/02/desert-x-alula-installation-design_dezeen_2364_hero-1-852x479.jpg",
-        "Categoria 3",
+        "sw",
         "12:30, 6/15/2020",
         "test"
       ),
@@ -45,7 +45,7 @@ export class ServicioService {
         "Autor",
         // tslint:disable-next-line: max-line-length
         "https://previews.123rf.com/images/antonfoltin/antonfoltin1704/antonfoltin170400072/76352261-sonnenaufgang-in-sonoran-w%C3%BCste-in-der-n%C3%A4he-von-phoenix-arizona-.jpg",
-        "Categoria 4",
+        "tech",
         "12:30, 6/15/2020",
         "test"
       )

@@ -13,12 +13,14 @@ import { ServicioService } from "../servicio.service";
   styleUrls: ["./formulario-component.component.css"]
 })
 export class FormularioComponentComponent implements OnInit {
+  arrPosting: Post[];
   post: FormGroup;
   constructor(
     private servcioPosting: ServicioService,
     private activateRoute: ActivatedRoute,
     private router: Router
   ) {
+    this.arrPosting = [];
     this.post = new FormGroup({
       titulo: new FormControl(" ", [
         Validators.required,
@@ -30,10 +32,10 @@ export class FormularioComponentComponent implements OnInit {
         //this.autorValidator
       ]),
       imagen: new FormControl("", [
-        Validators.required,
-        Validators.pattern(
-          /^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?:: (\d +)) ? (?: \/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/
-        )
+        Validators.required
+        // Validators.pattern(
+        //   /^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?:: (\d +)) ? (?: \/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/
+        // )
       ]),
       categoria: new FormControl("", [
         Validators.required,
@@ -68,6 +70,7 @@ export class FormularioComponentComponent implements OnInit {
       dateConstructor,
       this.post.value.texto
     );
+    this.arrPosting.push(posting);
     this.servcioPosting.agregarPost(posting);
   }
 

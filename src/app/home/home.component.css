@@ -1,6 +1,11 @@
+.home {
+  display: flex;
+  justify-content: space-between;
+}
+
 div {
-  width: 500px;
-  color: black;
+  width: 300px;
+  color: white;
   font-size: 1.4rem;
   margin-top: 10px;
   margin-top: 10px;
@@ -9,6 +14,10 @@ div {
 p {
   text-align: center;
 }
+button:focus {
+  outline: none;
+}
+
 .custom-style {
   background-color: transparent;
   opacity: 1;
@@ -20,5 +29,15 @@ button {
   margin-left: 40px;
 }
 .icon {
-  margin-right: 60px;
+  margin-right: 6px;
+}
+.search {
+  margin-left: 70px;
+  color: black;
+}
+
+@media (min-width: 576px) {
+}
+h4 {
+  color: black;
 }

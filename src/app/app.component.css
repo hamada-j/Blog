@@ -1,9 +1,8 @@
 .toolbar {
+  background-color: #555;
   color: black;
   font-size: 2rem;
-  margin: 10px;
-  width: 98%;
-  padding: 10px;
+
   display: flex;
   justify-content: space-between;
 }
@@ -17,8 +16,44 @@
   flex-wrap: wrap;
   display: flex;
   flex-direction: column;
-  margin: 50px;
+
   padding: 10px;
   width: 100px;
   height: 0px;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+
+.nav {
+  background-color: #555;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+button:focus {
+  outline: none;
 }

@@ -1,45 +1,50 @@
-<div class="formulario">
-  <form [formGroup]="post" (ngSubmit)="onSubmit()">
-    <p>
-      <mat-form-field class="mat-form-field" color="accent" appearance="legacy">
-        <mat-label class="mat-label">Titulo del Post</mat-label>
-        <input
-          autocomplete="off"
-          matInput
-          placeholder="Escribe!"
-          formControlName="titulo"
-        />
-        <mat-icon matSuffix>picture_in_picture</mat-icon>
-        <mat-hint></mat-hint>
-      </mat-form-field>
-    </p>
-    <p>
-      <mat-form-field color="accent" appearance="standard">
-        <mat-label class="mat-label">Autor</mat-label>
-        <input
-          autocomplete="off"
-          matInput
-          placeholder="Escribe!"
-          formControlName="autor"
-        />
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-        <mat-hint class="mat-hint">dinos quien eres!</mat-hint>
-      </mat-form-field>
-    </p>
-    <p>
-      <mat-form-field color="accent" appearance="standard">
-        <mat-label class="mat-label">Imagen</mat-label>
-        <input
-          autocomplete="off"
-          matInput
-          placeholder="Url!"
-          formControlName="imagen"
-        />
-        <mat-icon matSuffix>add_a_photo</mat-icon>
-        <mat-hint> esta chula la foto ;)</mat-hint>
-      </mat-form-field>
-    </p>
-    <p>
+<div class="all">
+  <div class="formulario ">
+    <form [formGroup]="post" (ngSubmit)="onSubmit()">
+      <p>
+        <mat-form-field
+          class="mat-form-field"
+          color="accent"
+          appearance="legacy"
+        >
+          <mat-label class="mat-label">Title</mat-label>
+          <input
+            autocomplete="off"
+            matInput
+            placeholder="Escribe!"
+            formControlName="titulo"
+          />
+          <mat-icon matSuffix>picture_in_picture</mat-icon>
+          <mat-hint></mat-hint>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field color="accent" appearance="standard">
+          <mat-label class="mat-label">Author</mat-label>
+          <input
+            autocomplete="off"
+            matInput
+            placeholder="Escribe!"
+            formControlName="autor"
+          />
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint class="mat-hint">Tell us who you are</mat-hint>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field color="basic" appearance="standard">
+          <mat-label class="mat-label">Picture</mat-label>
+          <input
+            autocomplete="off"
+            matInput
+            placeholder="Url!"
+            formControlName="imagen"
+          />
+          <mat-icon matSuffix>add_a_photo</mat-icon>
+          <mat-hint> show us a ;)</mat-hint>
+        </mat-form-field>
+      </p>
+      <!-- <p>
       <mat-form-field color="accent" appearance="fill">
         <mat-label class="mat-label">categoria</mat-label>
         <input
@@ -51,30 +56,81 @@
         <mat-icon matSuffix>category</mat-icon>
         <mat-hint></mat-hint>
       </mat-form-field>
-    </p>
-    <p>
-      <mat-form-field color="accent" appearance="outline">
-        <mat-label class="mat-label">Texto</mat-label>
-        <input
-          autocomplete="off"
-          matInput
-          placeholder="Escribe!"
-          formControlName="texto"
-        />
-        <mat-icon matSuffix>textsms</mat-icon>
-        <mat-hint>texto!</mat-hint>
-      </mat-form-field>
-    </p>
+    </p> -->
+      <p>
+        Category
+        <mat-button-toggle-group
+          appearance="legacy"
+          name="fontStyle"
+          class="cateoria"
+          formControlName="categoria"
+        >
+          <mat-button-toggle value="tech">Tech</mat-button-toggle>
+          <mat-button-toggle value="hw">Hardware</mat-button-toggle>
+          <mat-button-toggle value="sw">Software</mat-button-toggle>
+        </mat-button-toggle-group>
+      </p>
+      <p>
+        <mat-form-field color="accent" appearance="outline">
+          <mat-label class="mat-label">Text</mat-label>
+          <input
+            autocomplete="off"
+            matInput
+            placeholder="Escribe!"
+            formControlName="texto"
+          />
+          <mat-icon matSuffix>textsms</mat-icon>
+          <mat-hint>details</mat-hint>
+        </mat-form-field>
+      </p>
 
-    <button
-      mat-raised-button
-      color="accent"
-      matBadge="8"
-      matBadgePosition="before"
-      matBadgeColor="accent"
-      type="submit"
-    >
-      Enviar
-    </button>
-  </form>
+      <button
+        mat-raised-button
+        color="basic"
+        matBadge="8"
+        matBadgePosition="before"
+        matBadgeColor="accent"
+        type="submit"
+      >
+        Done
+      </button>
+    </form>
+
+    <div class="vista">
+      <h3>
+        Preview of your Post
+      </h3>
+      <div>
+        <div *ngFor="let post of arrPosting">
+          <mat-card class="example-card">
+            <mat-card-header>
+              <div class="posicion">
+                <mat-card-title>{{ post.autor }}</mat-card-title>
+                <mat-card-subtitle>{{ post.titulo }}</mat-card-subtitle>
+              </div>
+              <div class="example-button-row">
+                <button
+                  mat-icon-button
+                  color="accent"
+                  aria-label="Example icon-button with a heart icon"
+                >
+                  <mat-icon>favorite</mat-icon>
+                </button>
+              </div>
+            </mat-card-header>
+            <img mat-card-image [src]="post.imagen" alt="Photo" />
+            <mat-card-content>
+              <h4>{{ post.categoria }}</h4>
+              <p>
+                {{ post.texto }}
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <p>{{ post.fecha }}</p>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

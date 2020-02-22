@@ -1,4 +1,4 @@
-// utilizando JEST para analizar la Meh(x) sin Jasmine y Karma a medias.
+// utilizando JEST para analizar  Meh(x) sin Jasmine y Karma a medias.
 
 import "jest-preset-angular";
 
@@ -15,14 +15,6 @@ test("Descripcion: debe analizar los campos que el usario ha introducido", () =>
     "id"
   );
 
-  expect(text).toBe(
-    "titulo",
-    "autor",
-    "imagen",
-    "categoria",
-    "fecha",
-    "texto",
-    "id"
-  );
+  expect(text).toBe("test", "test", "test", "test", "test", "test", "test");
   // tercer test
 });

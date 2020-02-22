@@ -23,11 +23,12 @@ export class BlogComponenComponent implements OnInit {
   handelClick($event) {
     this.router.navigate(["/formulario"]);
   }
-  manejarCampoTexto($event) {
-    this.postService.getByCatergoria($event.target.value).then(arrRecogido => {
-      this.arrTransito = arrRecogido;
-    });
-  }
+  // manejarCampoTexto($event) {
+  //   this.postService.getByCatergoria($event.target.value).then(arrRecogido => {
+  //     this.arrTransito = arrRecogido;
+  //   });
+  // }
+
   handelDelete(post) {
     console.log(post);
     this.postService
@@ -41,5 +42,19 @@ export class BlogComponenComponent implements OnInit {
     this.postService
       .getAllPosts()
       .then(listaPost => (listaPost = this.arrPost));
+  }
+
+  handelSearch(texto) {
+    if (texto.value === "all") {
+      console.log(texto.value);
+      this.postService
+        .getAllPosts()
+        .then(arrFiltrado => (this.arrPost = arrFiltrado));
+    } else {
+      console.log(texto.value);
+      this.postService
+        .getByCatergoria(texto.value)
+        .then(arrFiltrado => (this.arrPost = arrFiltrado));
+    }
   }
 }

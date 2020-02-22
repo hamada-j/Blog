@@ -19,7 +19,10 @@
           </button>
         </div>
       </mat-card-header>
-      <img mat-card-image [src]="post.thumbnailUrl" alt="Photo" />
+      <div class="foto">
+        <img mat-card-image [src]="post.thumbnailUrl" alt="Photo" />
+      </div>
+
       <mat-card-content>
         <h4>{{ post.id }}</h4>
         <p>
