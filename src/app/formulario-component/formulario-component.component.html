@@ -9,6 +9,7 @@
         >
           <mat-label class="mat-label">Title</mat-label>
           <input
+
             autocomplete="off"
             matInput
             placeholder="Escribe!"
@@ -22,6 +23,7 @@
         <mat-form-field color="accent" appearance="standard">
           <mat-label class="mat-label">Author</mat-label>
           <input
+
             autocomplete="off"
             matInput
             placeholder="Escribe!"
@@ -35,6 +37,7 @@
         <mat-form-field color="basic" appearance="standard">
           <mat-label class="mat-label">Picture</mat-label>
           <input
+
             autocomplete="off"
             matInput
             placeholder="Url!"
@@ -60,6 +63,7 @@
       <p>
         Category
         <mat-button-toggle-group
+
           appearance="legacy"
           name="fontStyle"
           class="cateoria"
@@ -74,6 +78,7 @@
         <mat-form-field color="accent" appearance="outline">
           <mat-label class="mat-label">Text</mat-label>
           <input
+
             autocomplete="off"
             matInput
             placeholder="Escribe!"
@@ -101,36 +106,26 @@
         Preview of your Post
       </h3>
       <div>
-        <div *ngFor="let post of arrPosting">
+        <div >
           <mat-card class="example-card">
             <mat-card-header>
               <div class="posicion">
-                <mat-card-title>{{ post.autor }}</mat-card-title>
-                <mat-card-subtitle>{{ post.titulo }}</mat-card-subtitle>
+                <mat-card-title>{{ pTitulo }}</mat-card-title>
+                <mat-card-subtitle>{{ pAutor }}</mat-card-subtitle>
               </div>
-              <div class="example-button-row">
-                <button
-                  mat-icon-button
-                  color="accent"
-                  aria-label="Example icon-button with a heart icon"
-                >
-                  <mat-icon>favorite</mat-icon>
-                </button>
-              </div>
+
             </mat-card-header>
-            <img mat-card-image [src]="post.imagen" alt="Photo" />
+            <img mat-card-image [src]="pImagen" alt="Photo" />
             <mat-card-content>
-              <h4>{{ post.categoria }}</h4>
-              <p>
-                {{ post.texto }}
-              </p>
+              <h4>{{ pCategoria }} </h4>
             </mat-card-content>
             <mat-card-actions>
-              <p>{{ post.fecha }}</p>
+              <p>{{ pTexto }}</p>
             </mat-card-actions>
           </mat-card>
         </div>
       </div>
+
     </div>
   </div>
 </div>

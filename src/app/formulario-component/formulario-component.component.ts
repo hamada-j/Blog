@@ -13,6 +13,12 @@ import { ServicioService } from "../servicio.service";
   styleUrls: ["./formulario-component.component.css"]
 })
 export class FormularioComponentComponent implements OnInit {
+  pTitulo: string;
+  pAutor: string;
+  pImagen: string;
+  pCategoria: string;
+  pTexto: string;
+
   arrPosting: Post[];
   post: FormGroup;
   constructor(
@@ -84,5 +90,31 @@ export class FormularioComponentComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    let titulo = this.post.controls.titulo;
+    titulo.valueChanges.pipe(debounceTime(400)).subscribe(value => {
+      console.log(value);
+      this.pTitulo = value;
+    });
+    let autor = this.post.controls.autor;
+    autor.valueChanges.pipe(debounceTime(400)).subscribe(value => {
+      console.log(value);
+      this.pAutor = value;
+    });
+    let imagen = this.post.controls.imagen;
+    imagen.valueChanges.pipe(debounceTime(400)).subscribe(value => {
+      console.log(value);
+      this.pImagen = value;
+    });
+    let cateroria = this.post.controls.categoria;
+    cateroria.valueChanges.pipe(debounceTime(400)).subscribe(value => {
+      console.log(value);
+      this.pCategoria = value;
+    });
+    let texto = this.post.controls.texto;
+    texto.valueChanges.pipe(debounceTime(400)).subscribe(value => {
+      console.log(value);
+      this.pTexto = value;
+    });
+  }
 }
