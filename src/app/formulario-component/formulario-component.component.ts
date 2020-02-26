@@ -91,29 +91,24 @@ export class FormularioComponentComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    let titulo = this.post.controls.titulo;
+    const titulo = this.post.controls.titulo;
     titulo.valueChanges.pipe(debounceTime(400)).subscribe(value => {
-      console.log(value);
       this.pTitulo = value;
     });
-    let autor = this.post.controls.autor;
+    const autor = this.post.controls.autor;
     autor.valueChanges.pipe(debounceTime(400)).subscribe(value => {
-      console.log(value);
       this.pAutor = value;
     });
-    let imagen = this.post.controls.imagen;
+    const imagen = this.post.controls.imagen;
     imagen.valueChanges.pipe(debounceTime(400)).subscribe(value => {
-      console.log(value);
       this.pImagen = value;
     });
-    let cateroria = this.post.controls.categoria;
+    const cateroria = this.post.controls.categoria;
     cateroria.valueChanges.pipe(debounceTime(400)).subscribe(value => {
-      console.log(value);
       this.pCategoria = value;
     });
-    let texto = this.post.controls.texto;
+    const texto = this.post.controls.texto;
     texto.valueChanges.pipe(debounceTime(400)).subscribe(value => {
-      console.log(value);
       this.pTexto = value;
     });
   }
